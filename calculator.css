@@ -52,7 +52,8 @@
   gap: 15px;
   margin-bottom: 20px;
 }
-.container-wrapper .number-key {
+.container-wrapper .number-key,
+.equal-key {
   display: flex;
   flex-direction: column;
   width: 25%;
@@ -68,10 +69,14 @@
   background-color: #eee;
 }
 
-.number-key:nth-child(4) p {
+.equal-key p {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0px;
+  border: 1px solid lightgray;
+  padding: 15px;
+  text-align: center;
   background-color: cornflowerblue;
   height: 100%;
   color: white;
