@@ -46,24 +46,28 @@
   background-color: lightgray;
 }
 
-.container-wrapper {
+.keyboard {
   display: flex;
   width: 88%;
   gap: 15px;
   margin-bottom: 20px;
 }
-.container-wrapper .number-key,
-.equal-key {
+.keyboard .number-key {
   display: flex;
-  flex-direction: column;
-  width: 25%;
+  flex-wrap: wrap;
+  width: 85%;
   gap: 15px;
+}
+
+.keyboard .equal-key {
+  width: 25%;
 }
 
 .number-key p {
   margin: 0px;
   border: 1px solid lightgray;
   padding: 15px;
+  width: 18%;
   text-align: center;
   font-size: 20px;
   background-color: #eee;
@@ -76,9 +80,15 @@
   margin: 0px;
   border: 1px solid lightgray;
   padding: 15px;
+  box-sizing: border-box;
   text-align: center;
   background-color: cornflowerblue;
   height: 100%;
   color: white;
   font-size: 17px;
+}
+
+.calculation-key i,
+.keyboard p {
+  cursor: pointer;
 }
