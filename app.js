@@ -1,5 +1,5 @@
 let contentData = "";
-let contentResult = "";
+let resultData = "";
 function renderKeyBroad() {
   const KEYS = ["7", "8", "9", "4", "5", "6", "1", "2", "3", "0", ".", "C"];
   const numberKeyElement = document.getElementById("number-key");
@@ -15,8 +15,15 @@ function renderKeyBroad() {
 function onClickKeyBoard(event) {
   const currentKeyElement = event.target;
   const keyContent = currentKeyElement.textContent;
-  contentData += keyContent;
-  renderCalculator();
+  if (keyContent === "C") {
+    contentData = "";
+    resultData = "";
+    renderCalculator();
+    renderResult();
+  } else {
+    contentData += keyContent;
+    renderCalculator();
+  }
 }
 
 function handleCalculatorKey() {
@@ -32,14 +39,27 @@ function handleCalculatorKey() {
   });
 }
 
+function handleEqualKey() {
+  const equalKeyElement = document.getElementById("equal-key");
+  equalKeyElement.addEventListener("click", (event) => {
+    try {
+      const result = eval(contentData);
+      resultData = result;
+      renderResult();
+    } catch (error) {
+      renderResult(true);
+    }
+  });
+}
+
 function renderCalculator() {
   const calculatorElement = document.getElementById("calculator-content");
   calculatorElement.innerHTML = contentData;
 }
 
-function renderResult() {
+function renderResult(isError) {
   const resultElement = document.getElementById("result-content");
-  resultElement.innerHTML = contentResult;
+  resultElement.innerHTML = isError ? "Error" : resultData;
 }
 
 function main() {
@@ -47,6 +67,7 @@ function main() {
   renderCalculator();
   renderResult();
   handleCalculatorKey();
+  handleEqualKey();
 }
 
 main();
