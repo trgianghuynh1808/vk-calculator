@@ -9,39 +9,35 @@
       src="https://kit.fontawesome.com/0c256c6b14.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./calculator.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="main">
       <div class="container">
         <div class="result-content">
-          <p>15+15</p>
-          <p>30</p>
+          <p id="calculator-content">15+15</p>
+          <p id="result-content">30</p>
         </div>
-        <div class="calculation-key">
-          <i class="fa-solid fa-plus"></i>
-          <i class="fa fa-minus" aria-hidden="true"></i>
-          <i class="fa fa-xmark" aria-hidden="true"></i>
-          <i class="fa fa-divide" aria-hidden="true"></i>
+        <div id="calculator-key" class="calculation-key">
+          <i data-key="+" class="fa-solid fa-plus"></i>
+          <i data-key="-" class="fa fa-minus" aria-hidden="true"></i>
+          <i data-key="x" class="fa fa-xmark" aria-hidden="true"></i>
+          <i data-key=":" class="fa fa-divide" aria-hidden="true"></i>
         </div>
-        <div class="container-wrapper">
-          <div class="number-key">
-            <p>7</p>
-            <p>4</p>
-            <p>1</p>
-            <p>0</p>
-          </div>
-          <div class="number-key">
+        <div class="keyboard">
+          <div id="number-key" class="number-key">
+            <!-- <p>7</p>
             <p>8</p>
-            <p>5</p>
-            <p>2</p>
-            <p>.</p>
-          </div>
-          <div class="number-key">
             <p>9</p>
+            <p>4</p>
+            <p>5</p>
             <p>6</p>
+            <p>1</p>
+            <p>2</p>
             <p>3</p>
-            <p>C</p>
+            <p>0</p>
+            <p>.</p>
+            <p>C</p> -->
           </div>
           <div class="equal-key">
             <p>
@@ -51,5 +47,6 @@
         </div>
       </div>
     </div>
+    <script src="./app.js"></script>
   </body>
 </html>
